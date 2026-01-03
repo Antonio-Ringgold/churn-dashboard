@@ -12,7 +12,7 @@ import base64
 ROOT = Path(__file__).parent.resolve()
 
 st.set_page_config(page_title="ChurnGuard Pro", layout="wide")
-st.title("🔥 ChurnGuard Pro – Customer Retention Dashboard")
+st.title("ChurnGuard Pro – Customer Retention Dashboard")
 st.markdown("Ranked high-risk customers • $ revenue impact • SHAP explainability • Interactive filters")
 
 @st.cache_resource
@@ -142,3 +142,4 @@ csv = top_n_df.to_csv(index=False).encode()
 b64 = base64.b64encode(csv).decode()
 href = f'<a href="data:file/csv;base64,{b64}" download="top_{top_n}_churn_risks.csv">Download Top-{top_n} as CSV</a>'
 st.markdown(href, unsafe_allow_html=True)
+
